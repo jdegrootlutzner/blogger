@@ -1,4 +1,5 @@
-<h1><%= @article.title %></h1>
+<h1>Blogger</h1>
+<h2><%= @article.title %></h2>
 <p><%= @article.body%></p>
 <p>
 <%= link_to "Edit", edit_article_path(@article) %>
@@ -6,5 +7,8 @@
 data: {confirm: "Are you sure you want to delete this article? The contents cannot be recoverd."}%>
 </p>
 </p>
+<h4>Comments (<%= @article.comments.size %>)</h4>
+<%= render partial: 'articles/comment', collection: @article.comments %>
+<%= render partial: 'comments/form' %>
 <%= link_to "<< Back to Articles List", articles_path %>
 <p>
