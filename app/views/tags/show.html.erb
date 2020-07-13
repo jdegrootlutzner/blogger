@@ -1,0 +1,11 @@
+<h1>Blogger</h1>
+<h2>Articles Tagged with '<%= @tag.name %>'</h2>
+
+<ul>
+  <% @tag.articles.each do |article| %>
+    <li><%= link_to article.title, article_path(article) %></li>
+  <% end %>
+</ul>
+<p style="margin-top:20px"><%= link_to "Show all Tags", tags_path %></p>
+<p><%= link_to "<< Back to Articles List", articles_path %>
+</p>
